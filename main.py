@@ -139,49 +139,11 @@ for idx, title in enumerate(df['title'][79:]):
     print("-------------------------")
     driver.get(url)
 
-    # Call the click_first_link function and store the result in a variable
-    # clicked = click_first_link(driver)
-
-    # # If clicked is True, break out of the loop
-    # if clicked:
-    #     print(f"Link found for {i}")
-
-    #     # break
-    # else:
-    #     # If clicked is False, print a message and continue the loop
-    #     print(f"No link found for {i}")
-    #     continue
-
-    # driver.get("https://trakt.tv/movies/toy-story-5")
     # Find the element by its text content using XPath
     try:
         element = driver.find_element(By.XPATH, "//div[contains(text(), 'Add to history')]")
         # Click on the element
         element.click()
-        # Find the li element that has the class name "summary-user-rating" using the class name locator
-        # li_element = driver.find_element(By.CLASS_NAME, "summary-user-rating")
-        # Click on the li element
-        # print('clicked')
-        # time.sleep(10)
-        # li_element.click()
-        # Call the click_heart function with the desired value
-        # click_heart(driver, 8) # for example
-        # click_heart(driver, 5)
-        # try:
-        # Find the li element that has the class name "summary-user-rating" using the class name locator
-        # li_element = driver.find_element(By.CLASS_NAME, "summary-user-rating")
-        # # Click on the li element
-        # li_element.click()
-        # print('clicked on the "rate this movie"')
-        # time.sleep(2)
-        # except:
-            # print('you are fucked')
-        # click_heart(driver, 5, "id")
-        # click_heart(driver, 5, "xpath")
-        # click_heart(driver, 5, "css selector")
-        # click_heart(driver, 5, "link text")
-        # click_heart(driver, 5, "partial link text")
-        # click_heart(driver, 5, "class name")
         print('added a new movie', df.index)
     except NoSuchElementException:
     # If the element is not found, pass
